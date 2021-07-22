@@ -8,6 +8,7 @@ import '@openzeppelin/contracts/utils/Address.sol';
 import '@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol';
 import '@openzeppelin/contracts/token/ERC20/ERC20.sol';
 
+
 contract ZhToken is ERC20 {
 	using SafeERC20 for IERC20;
 	using Address for address;
@@ -53,7 +54,7 @@ contract ZhToken is ERC20 {
 		}
 		
 		// Use current supply to gauge cliff.  This will cause a bit of overflow into the next cliff.
-		// Requries a max supply check.
+		// Requires a max supply check.
 		uint256 cliff = supply.div(reductionPerCliff);
 		
 		// Mint if below total cliffs.
